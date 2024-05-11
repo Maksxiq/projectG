@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <form>
+    <div class="form-group"> 
+      <label for="tableLink">Таблица с данными:</label>
+      <input type="url" class="form-control" id="tableLink" placeholder="Ссылка на Google Sheets">
+       <button type="button" class="btn btn-primary" onclick="extractVariableValuesFromGoogleShee()">3.Обработать Таблицу</button>
+    </div>
+    <div class="form-group">
+      <label for="templateLink">Шаблон:</label>
+      <input type="url" class="form-control" id="templateLink" placeholder="Ссылка на Google Docs">
+      <button type="button" class="btn btn-primary" onclick="xtractVariableValuesFromDocx()">2.Обработать Документ</button>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        <button type="button" class="btn btn-primary" onclick="connectToGoogleSheet();connectToGoogleDocs();findDocID();findSheetID();">1.Подключиться к файлам</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#previewModal" onclick="createWordDocumentWithVariables()">4.Предварительный просмотр</button>
+        <button type="button" class="btn btn-primary" id="getFileBtn" onclick="downloadFile()">5.Получить файл</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Preview Modal -->
+<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="previewModalLabel">Предварительный просмотр</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Preview content will be loaded here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Bootstrap JS and dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // JavaScript for file download
+  document.getElementById('getFileBtn').addEventListener('click', function() {
+    // Code for generating and downloading DOCX file
+    // This functionality needs to be implemented
+    // Replace this comment with your implementation
+    alert('This functionality needs to be implemented for downloading DOCX file.');
+  });
+</script> 
+<!-- Подключаем TS -->
+<script type="module" src="app.js"></script>
+</body>
+</html>
